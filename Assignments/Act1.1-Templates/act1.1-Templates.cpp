@@ -1,45 +1,46 @@
 #include <iostream>
-using namespace std;
-
+#include <string>
 #include "List.h"
 
-// int sum(int a, int b) {
-//     return a + b;
-// }
-
-// double sum(double a, double b) {
-//     return a + b;
-// }
-
-// string sum(string a, string b) {
-//     return a + b;
-// }
-
-template <typename T>
-T sum(T a, T b) {
-    return a + b;
-}
+using namespace std;
 
 int main() {
+    List<int> numeros;
+    
+    numeros.insert(10);
+    numeros.insert(20);
+    numeros.insert(30);
+    numeros.print();
+    
+    numeros.insertAt(1, 15);
+    numeros.print();
+    
+    numeros.removeAt(2);
+    numeros.print();
+    
+    cout << numeros.getMax() << endl;
+    cout << numeros.getSize() << endl;
+    cout << numeros.getData(1) << endl;
+    
+    numeros.removeLast();
+    numeros.print();
 
-    string a= "hola ";
-    string b= "crayola";
-    cout << "Sum of " << a << " and " << b << " is: " << sum(a, b) << endl;
-    int c= 5;
-    int d= 10;
-    cout << "Sum of " << c << " and " << d << " is: " << sum(c, d) << endl;
-    double e= 5.5;
-    double f= 10.5;
-    cout << "Sum of " << e << " and " << f << " is: " << sum(e, f) << endl;
-
-    List<int> list;
-    list.insert(5);
-    list.insert(10);
-    list.insert(15);
-
-    List<string> things;
-    things.insert("Laptop");
-    things.insert("bottle");
+    List<string> palabras;
+    
+    palabras.insert("Mundo");
+    palabras.insert("C++");
+    palabras.print();
+    
+    palabras.insertAt(0, "Hola");
+    palabras.print();
+    
+    palabras.removeAt(-1);
+    
+    palabras.removeLast();
+    palabras.removeLast();
+    palabras.removeLast();
+    
+    palabras.removeLast();
 
     return 0;
 }
