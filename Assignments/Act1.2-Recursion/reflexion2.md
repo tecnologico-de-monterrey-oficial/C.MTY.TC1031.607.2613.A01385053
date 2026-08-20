@@ -1,0 +1,10 @@
+# Reflexion - Actividad 02
+
+**En que casos notaste que la version recursiva fue mas lenta o uso mas memoria que la iterativa? A que se debio?**
+La version recursiva es notablemente mas lenta en el calculo de Fibonacci. Esto se debe a que genera un arbol de llamadas con una complejidad de tiempo exponencial O(2^n), recalculando los mismos subproblemas multiples veces. Ademas, en todos los casos recursivos (suma, bacterias, inversion, potencias) para valores de n altos, se utiliza mucha mas memoria debido a que cada iteracion anade un nuevo marco a la pila de llamadas del sistema (call stack), mientras que la version iterativa mantiene una complejidad espacial constante O(1).
+
+**Para la suma 1..n, sumFormula resuelve en un solo paso lo que a sumIterative y sumRecursive les toma n pasos. Que te dice esto sobre buscar una formula antes de escribir codigo?**
+Demuestra que realizar un analisis matematico previo al desarrollo es indispensable. Encontrar una solucion matematica transforma un algoritmo de tiempo lineal O(n) en uno de tiempo constante O(1). Optimiza de manera drastica el uso del procesador y reduce los ciclos de ejecucion, haciendo que el programa sea inmensamente mas eficiente sin importar que tan grande sea la entrada de datos.
+
+**Si bacteriasRecursive tuviera que calcular n = 100,000 dias, que problema esperarias encontrar y como lo resolverias?**
+Al realizar 100,000 llamadas recursivas se provocaria un "Stack Overflow" (desbordamiento de pila), ya que se agotaria la memoria asignada para la pila de llamadas del programa antes de llegar al caso base. La forma mas directa y segura de resolverlo en C++ seria utilizar la funcion bacteriasIterative en su lugar, dado que un ciclo for puede manejar 100,000 iteraciones sin ningun riesgo de desbordamiento de memoria ni penalizaciones de rendimiento. Otra alternativa para evitar la iteracion seria buscar una formula matematica cerrada para aplicar el factor de crecimiento en tiempo constante.
