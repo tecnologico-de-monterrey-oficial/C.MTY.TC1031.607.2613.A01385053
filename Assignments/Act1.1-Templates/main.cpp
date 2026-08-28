@@ -1,7 +1,6 @@
 //David Gil Alvarado
 //A01385053
 
-
 #include <iostream>
 #include <string>
 #include "Lista.h"
